@@ -230,17 +230,6 @@
           "target_label": "kubernetes_name"
         }
       ]
-    },
-    {
-      "job_name": "monitor",
-      "scrape_interval": "15s",
-      "static_configs": [
-        {
-          "targets": [
-            "eas-monitor.eas:3031"
-          ]
-        }
-      ]
     }
   ]
 }
