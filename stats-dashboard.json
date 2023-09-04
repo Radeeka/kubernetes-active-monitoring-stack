@@ -85,7 +85,7 @@
           "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": true,
-          "expr": "histogram_quantile(0.5, sum(rate(eas_http_response_time_bucket[$__interval])) by (le))",
+          "expr": "histogram_quantile(0.5, sum(rate(app_http_response_time_bucket[$__interval])) by (le))",
           "hide": false,
           "interval": "",
           "intervalFactor": 1,
@@ -166,7 +166,7 @@
           "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": true,
-          "expr": "histogram_quantile(0.65, sum(rate(eas_http_response_time_bucket[$__interval])) by (le))",
+          "expr": "histogram_quantile(0.65, sum(rate(app_http_response_time_bucket[$__interval])) by (le))",
           "hide": false,
           "interval": "",
           "intervalFactor": 1,
@@ -247,7 +247,7 @@
           "datasource": "Prometheus",
           "editorMode": "code",
           "exemplar": true,
-          "expr": "histogram_quantile(0.95, sum(rate(eas_http_response_time_bucket[$__interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(app_http_response_time_bucket[$__interval])) by (le))",
           "hide": false,
           "interval": "",
           "intervalFactor": 1,
@@ -329,7 +329,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "(sum(eas_http_response_time_sum{nodeID!~\"eas-internal-api-.*\"}) by (x,service, nodeID) - sum (eas_http_response_time_sum{nodeID!~\"eas-internal-api-.*\"} offset $__interval) by (x,service, nodeID)) / \r\n(sum(eas_http_response_time_count{nodeID!~\"eas-internal-api-.*\"}) by (x,service, nodeID) - sum (eas_http_response_time_count{nodeID!~\"eas-internal-api-.*\"} offset $__interval) by (x,service, nodeID))",
+          "expr": "(sum(app_http_response_time_sum{nodeID!~\"app-internal-api-.*\"}) by (x,service, nodeID) - sum (app_http_response_time_sum{nodeID!~\"app-internal-api-.*\"} offset $__interval) by (x,service, nodeID)) / \r\n(sum(app_http_response_time_count{nodeID!~\"app-internal-api-.*\"}) by (x,service, nodeID) - sum (app_http_response_time_count{nodeID!~\"app-internal-api-.*\"} offset $__interval) by (x,service, nodeID))",
           "interval": "",
           "legendFormat": "{{service}}-{{nodeID}}",
           "refId": "A"
@@ -389,7 +389,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "(sum( eas_hs6p_response_time_sum ) by (x,service, nodeID) - sum ( eas_hs6p_response_time_sum offset $__interval ) by (x,service, nodeID)) / \r\n(sum( eas_hs6p_response_time_count ) by (x,service, nodeID) - sum ( eas_hs6p_response_time_count offset $__interval ) by (x,service, nodeID))",
+          "expr": "(sum( app_hs6p_response_time_sum ) by (x,service, nodeID) - sum ( app_hs6p_response_time_sum offset $__interval ) by (x,service, nodeID)) / \r\n(sum( app_hs6p_response_time_count ) by (x,service, nodeID) - sum ( app_hs6p_response_time_count offset $__interval ) by (x,service, nodeID))",
           "interval": "",
           "legendFormat": "{{nodeID}}",
           "refId": "A"
