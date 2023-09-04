@@ -2403,7 +2403,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "(sum( eas_http_response_time_sum ) by (x,service, nodeID) - sum ( eas_http_response_time_sum offset 5m ) by (x,service, nodeID)) / \r\n(sum( eas_http_response_time_count ) by (x,service, nodeID) - sum ( eas_http_response_time_count offset 5m ) by (x,service, nodeID))",
+          "expr": "(sum( app_http_response_time_sum ) by (x,service, nodeID) - sum ( app_http_response_time_sum offset 5m ) by (x,service, nodeID)) / \r\n(sum( app_http_response_time_count ) by (x,service, nodeID) - sum ( app_http_response_time_count offset 5m ) by (x,service, nodeID))",
           "interval": "",
           "legendFormat": "{{service}}:{{nodeID}}",
           "refId": "A"
@@ -2550,7 +2550,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "(sum(eas_http_request_total) by (x) - sum (eas_http_request_total offset 5m ) by (x)) / 5",
+          "expr": "(sum(app_http_request_total) by (x) - sum (app_http_request_total offset 5m ) by (x)) / 5",
           "interval": "",
           "legendFormat": "{{service}}",
           "refId": "A"
@@ -2697,7 +2697,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "eas_http_request_error_total",
+          "expr": "app_http_request_error_total",
           "interval": "",
           "legendFormat": "{{service}}-{{nodeId}}-{{status}}",
           "refId": "A"
