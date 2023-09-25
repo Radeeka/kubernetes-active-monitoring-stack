@@ -59,11 +59,8 @@ resource "kubernetes_config_map" "default_dashboard" {
     namespace = "statistics"
   }
   data = {
-    "dashboard.json" = file("${path.module}/grafana_dashboard.json")
-    "logs-dashboard.json" = file("${path.module}/logs_dashboard.json")
     "node-dashboard.json" = file("${path.module}/node_dashboard.json")
     "kubernetes-dashboard.json" = file("${path.module}/kubernetes_dashboard.json")
-    "alerting-dashboard.json" = file("${path.module}/alerting_dashboard.json")
     "stats_dashboard.json" = file("${path.module}/stats_dashboard.json")
   }
 }
